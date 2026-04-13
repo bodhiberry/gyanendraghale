@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ज्ञानेंद्र घले - Gyanendra Ghale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    :root {
+        --primary-blue: #003366;
+        --accent-green: #2e8b57;
+        --text-dark: #333;
+        --light-gray: #f4f4f4;
+        --white: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: var(--text-dark);
+        background-color: var(--white);
+    }
+
+    /* --- Header & Navigation --- */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--primary-blue);
+        z-index: 1100;
+    }
+
+    /* Mobile Toggle Button (Hidden on Desktop) */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text-dark);
+        margin-left: 25px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--accent-green);
+    }
+
+    /* --- Content Area --- */
+    .page-title {
+        background-color: var(--light-gray);
+        padding: 50px 5%;
+        text-align: center;
+        border-bottom: 4px solid var(--accent-green);
+    }
+
+    .page-title h1 {
+        margin: 0;
+        color: var(--primary-blue);
+        font-size: 2.2rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 25px;
+    }
+
+    .biography-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lang-block {
+        padding-bottom: 30px;
+    }
+
+    .lang-block h2 {
+        color: var(--accent-green);
+        border-left: 5px solid var(--primary-blue);
+        padding-left: 15px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+
+    .nepali-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+    }
+
+    .tagline {
+        font-weight: bold;
+        color: var(--primary-blue);
+        font-size: 1.2rem;
+        margin-top: 25px;
+    }
+
+    /* --- Footer --- */
+    footer {
+        background: var(--primary-blue);
+        color: white;
+        padding: 50px 5% 20px;
+        margin-top: 60px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 30px;
+    }
+
+    .footer-col h4 {
+        color: var(--accent-green);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-col a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+        color: var(--white);
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.4rem;
+        margin-right: 20px;
+        color: white;
+        opacity: 0.9;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 25px;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.6);
+    }
+
+    /* --- Responsive Breakpoint (768px) --- */
+    @media (max-width: 768px) {
+        header {
+            padding: 1rem 5%;
+        }
+
+        .menu-toggle {
+            display: block; /* Show hamburger icon */
+        }
+
+        .logo {
+            font-size: 1.1rem;
+        }
+
+        nav {
+            display: none; /* Hide menu by default on mobile */
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Logic for when the menu is opened via JavaScript */
+        nav.active {
+            display: flex;
+        }
+
+        nav a {
+            margin: 0;
+            padding: 15px 5%;
+            width: 90%;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        nav a:last-child {
+            border-bottom: none;
+        }
+
+        .page-title {
+            padding: 40px 5%;
+        }
+
+        .page-title h1 {
+            font-size: 1.8rem;
+        }
+
+        .container {
+            margin: 30px auto;
+        }
+    }
+
+
+    .hero-section {
+    width: 100%;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero-section img {
+    width: 100%;
+    max-height: 400px; /* control image height */
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px; /* space between image and text */
+    border-radius: 10px; /* optional styling */
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: #555;
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ज्ञानेंद्र घले - Gyanendra Ghale</div>
+    
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About me</a>
+        <a href="vitae.html">Vitae</a>
+        <a href="papers.html">Papers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active');
+    }
+</script>
+
+
+   <section class="hero-section">
+    <img src="gyne1.jpg" alt="Gyanendra Ghale">
+
+    <div class="hero-content">
+        <h1>Welcome to ज्ञानेंद्र घले - Gyanendra Ghale</h1>
+        
+    </div>
+</section>
+    <main class="container">
+        <article class="lang-section">
+           
+            <p>Gyanendra Ghale is a Nepali development activist and global health leader with over 30 years of international experience working with the World Health Organization (WHO) and UNICEF. He has contributed to global health policy, supported multiple countries across Asia, and led major initiatives including polio transition and COVID-19 recovery programs. With a strong commitment to community health, he has also established clinics and supported healthcare services in rural Nepal. Inspired by the energy of Nepal’s new generation, he has returned home to dedicate his experience and leadership to the nation’s development.</p>
+        </article>
+
+        <article class="lang-section">
+           
+            <p class="nepali-text">ज्ञानेन्द्र घले नेपालका विकास अभियन्ता तथा विश्व स्वास्थ्य क्षेत्रमा ३० वर्षभन्दा बढी अनुभव भएका व्यक्तित्व हुनुहुन्छ। उहाँले WHO र UNICEF सँग कार्य गर्दै विश्व स्वास्थ्य नीति निर्माण, एशियाका विभिन्न देशहरूमा स्वास्थ्य कार्यक्रम कार्यान्वयन, तथा पोलियो र कोभिड–१९ सम्बन्धी महत्वपूर्ण पहलहरूमा नेतृत्व गर्नुभएको छ। नेपालका ग्रामीण क्षेत्रमा स्वास्थ्य सेवा विस्तार गर्न उहाँले क्लिनिक स्थापना तथा विभिन्न स्वास्थ्य कार्यक्रमहरू सञ्चालन गर्नुभएको छ। नयाँ पुस्ताको ऊर्जा र प्रेरणाबाट प्रभावित भई उहाँ अहिले आफ्नो अनुभव र नेतृत्व नेपालकै विकासमा समर्पित गर्न फर्किनुभएको छ।</p>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p>Email: <a href="mailto:gyanendrag@yahoo.com">gyanendrag@yahoo.com</a></p>
+                <p>Phone: <a href="tel:+9779851050099">+977 9851050099</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Gyanendra Ghale. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
