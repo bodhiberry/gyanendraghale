@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | ज्ञानेंद्र घले - Gyanendra Ghale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+
+  <style>
+    :root {
+        --primary-blue: #003366;
+        --accent-green: #2e8b57;
+        --text-dark: #333;
+        --light-gray: #f4f4f4;
+        --white: #ffffff;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.8;
+        color: var(--text-dark);
+        background-color: var(--white);
+    }
+
+    /* --- Header & Navigation --- */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 5%;
+        background: var(--white);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: var(--primary-blue);
+        z-index: 1100;
+    }
+
+    /* Mobile Toggle Button (Hidden on Desktop) */
+    .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--primary-blue);
+        cursor: pointer;
+        z-index: 1100;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: var(--text-dark);
+        margin-left: 25px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+        color: var(--accent-green);
+    }
+
+    /* --- Content Area --- */
+    .page-title {
+        background-color: var(--light-gray);
+        padding: 50px 5%;
+        text-align: center;
+        border-bottom: 4px solid var(--accent-green);
+    }
+
+    .page-title h1 {
+        margin: 0;
+        color: var(--primary-blue);
+        font-size: 2.2rem;
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 25px;
+    }
+
+    .biography-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .lang-block {
+        padding-bottom: 30px;
+    }
+
+    .lang-block h2 {
+        color: var(--accent-green);
+        border-left: 5px solid var(--primary-blue);
+        padding-left: 15px;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        text-align: justify;
+    }
+
+    .nepali-text {
+        font-size: 1.15rem;
+        line-height: 2.2;
+    }
+
+    .tagline {
+        font-weight: bold;
+        color: var(--primary-blue);
+        font-size: 1.2rem;
+        margin-top: 25px;
+    }
+
+    /* --- Footer --- */
+    footer {
+        background: var(--primary-blue);
+        color: white;
+        padding: 50px 5% 20px;
+        margin-top: 60px;
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding-bottom: 30px;
+    }
+
+    .footer-col h4 {
+        color: var(--accent-green);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .footer-col ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-col ul li {
+        margin-bottom: 12px;
+    }
+
+    .footer-col a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .footer-col a:hover {
+        color: var(--white);
+    }
+
+    .social-icons {
+        margin-top: 15px;
+    }
+
+    .social-icons a {
+        font-size: 1.4rem;
+        margin-right: 20px;
+        color: white;
+        opacity: 0.9;
+    }
+
+    .copyright {
+        text-align: center;
+        padding-top: 25px;
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.6);
+    }
+
+    /* --- Responsive Breakpoint (768px) --- */
+    @media (max-width: 768px) {
+        header {
+            padding: 1rem 5%;
+        }
+
+        .menu-toggle {
+            display: block; /* Show hamburger icon */
+        }
+
+        .logo {
+            font-size: 1.1rem;
+        }
+
+        nav {
+            display: none; /* Hide menu by default on mobile */
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 20px 0;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            border-top: 1px solid var(--light-gray);
+        }
+
+        /* Logic for when the menu is opened via JavaScript */
+        nav.active {
+            display: flex;
+        }
+
+        nav a {
+            margin: 0;
+            padding: 15px 5%;
+            width: 90%;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        nav a:last-child {
+            border-bottom: none;
+        }
+
+        .page-title {
+            padding: 40px 5%;
+        }
+
+        .page-title h1 {
+            font-size: 1.8rem;
+        }
+
+        .container {
+            margin: 30px auto;
+        }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ज्ञानेंद्र घले - Gyanendra Ghale</div>
+    
+    <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About me</a>
+        <a href="vitae.html">Vitae</a>
+        <a href="papers.html">Papers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active');
+    }
+</script>
+
+    <section class="page-title">
+        <h1>About Me</h1>
+    </section>
+
+    <main class="container">
+        <div class="biography-section">
+            
+            <article class="lang-block">
+                <h2>English</h2>
+                <p>Gyanendra Ghale is a Nepali development activist and global health leader with over three decades of experience supporting countries and regions worldwide. His work is grounded in global health governance, including drafting key documents such as agendas for the World Health Assembly and Executive Board, and speaking notes for the Chair of the Executive Board and the President of the World Health Assembly. He has supported WHO Member States across a wide range of global health priorities and helped implement WHO collaborative work plans with governments in Indonesia, Bangladesh, India, Myanmar, and Nepal.</p>
+                
+                <p>For the past three years, he has served in WHO’s Governing Bodies function at Headquarters in Geneva, working closely with Member States on agenda items, resolutions and decisions, briefings, and intersessional planning. He supported negotiations at the last three World Health Assemblies, including WHA76 and WHA77, with WHA78 marking a record number of resolutions and decisions under his portfolio. During 2024–2025, he also served as Secretary to the Member State Mechanism (MSM) Steering Committee, supporting the committee’s work and follow-up.</p>
+                
+                <p>Previously, he led polio transition work in Southeast Asia—covering Nepal, India, Bangladesh, Myanmar, and Indonesia—under the Global Polio Transition Programme at WHO Headquarters. During the COVID-19 pandemic, he coordinated the global launch and delivery of WHO Internal Boost, supporting more than 33 countries and delivering over 60 high-level products and services to help restore essential health services disrupted by the pandemic. Internal Boost was showcased as a success story at WHO’s 154th Executive Board meeting in 2023.</p>
+                
+                <p>Earlier assignments include significant contributions in Indonesia to the WHO Country Cooperation Strategy and the UN Sustainable Development Cooperation Framework. He also strengthened results-based management across WHO’s operations in the country. In India, he contributed to polio eradication efforts. In Myanmar, he helped plan and deliver the country’s first nationwide mass measles immunization campaign in 2007, immunizing over 7.5 million children.</p>
+                
+                <p>Before joining WHO, he served with UNICEF as Country Coordinator for the Solomon Islands, supporting national immunization and child health programmes. As a civic activist in the mid-1990s, he led a prominent accountability campaign that raised concerns about the use of development aid. The campaign gained international media attention and contributed to changes in how international organizations operate locally.</p>
+                
+                <p>In Nepal, he has delivered practical community health impact. He established a clinic in his native village of Gerkhu, Nuwakot, just before the COVID-19 pandemic. Earlier, in the mid-1990s, he ran a mother-and-child health clinic in Goljung (Upper Rasuwa), built the main health facility building in Kalikasthan (now operating as a community hospital), and constructed a facility building to run a government clinic in rural Kavre. He also helped organize international surgical camps across Nepal, including at Trishuli District Hospital, Nuwakot, providing free treatment to thousands of children with congenital conditions, including cleft lip and palate, while strengthening local clinical capacity.</p>
+                
+                <p>He began his schooling in government schools in Gerkhu and Chokade—institutions established by his late great-grandfather—before completing high school and college in government institutions in Kathmandu. He later earned his master’s degree from Mahidol University in Thailand, one of Asia’s leading public health universities.</p>
+                
+                <p>Inspired by Nepal’s recent Gen Z movement, the sacrifices of young martyrs, and the energy of emerging leaders who have demonstrated delivery and impact, he chose to leave his international role early and return to Nepal to support the country’s development for the rest of his active life.</p>
+                
+                <div class="tagline">Jai Nepal.</div>
+            </article>
+
+            <hr style="border: 0; border-top: 1px solid #eee; margin: 40px 0;">
+
+            <article class="lang-block">
+                <h2>नेपाली</h2>
+                <div class="nepali-text">
+                    <p>ज्ञानेन्द्र घले नेपालका एक विकास अभियन्ता तथा विश्व स्वास्थ्य क्षेत्रमा लामो अनुभव भएका व्यक्ति हुन्। उहाँले विश्वका विभिन्न देश र क्षेत्रहरूसँग काम गर्दै तीन दशकभन्दा बढी समय बिताउनुभएको छ। उहाँको काम मुख्य रूपमा विश्व स्वास्थ्यसम्बन्धी नीति र निर्णय प्रक्रियासँग जोडिएको छ।</p>
+                    
+                    <p>यसअन्तर्गत उहाँले विश्व स्वास्थ्य सभा र कार्यकारी बोर्डका एजेन्डा तयार पार्ने कार्यमा, साथै कार्यकारी बोर्डका अध्यक्ष र विश्व स्वास्थ्य सभाका अध्यक्षका लागि आवश्यक वक्तव्य सामग्रीहरू तयार गर्न सहयोग गर्नुभएको छ। उहाँले इन्डोनेसिया, बंगलादेश,भारत, म्यानमार र नेपालजस्ता देशहरूमा सरकारहरूसँग मिलेर WHO का कार्ययोजनाहरू कार्यान्वयन गर्न उहाँले सहयोग गर्नुभयो।</p>
+                    
+                    <p>पछिल्ला तीन वर्ष उहाँ जेनेभास्थित WHO मुख्यालयमा Governing Bodies सम्बन्धी कार्यमा कार्यरत रहनुभयो। यस अवधिमा उहाँले सदस्य राष्ट्रहरूसँग एजेन्डा विषयहरू, प्रस्ताव तथा निर्णयहरू, ब्रिफिङ र बैठकबीचको तयारीमा नजिकबाट काम गर्नुभयो।</p>
+                    
+                    <p>यसअघि उहाँ WHO मुख्यालयबाट नेपाल, भारत, बंगलादेश, म्यानमार र इन्डोनेसियालाई समेट्ने दक्षिण–पूर्वी एशिया क्षेत्रमा Polio Transition सम्बन्धी कामको नेतृत्व गर्नुभयो। कोभिड–१९ महामारीको समयमा उहाँले WHO को Internal Boost कार्यक्रम सुरु तथा सञ्चालन गर्न सहयोग गर्नुभयो। यस कार्यक्रममार्फत ३३ भन्दा बढी देशलाई सहयोग प्रदान गरियो र महामारीका कारण प्रभावित स्वास्थ्य सेवाहरू पुनःसञ्चालन गर्न ६० भन्दा बढी उच्चस्तरीय सहयोग उपलब्ध गराइयो।</p>
+                    
+                    <p>यस कार्यक्रमलाई सन् २०२३ मा WHO को १५४औँ कार्यकारी बोर्ड बैठकमा सफल उदाहरणका रूपमा प्रस्तुत गरिएको थियो। उहाँले WHA76 र WHA77 सहित पछिल्ला तीन विश्व स्वास्थ्य सभामा भएका छलफल र सहमतिहरूलाई सहयोग गर्नुभयो। WHA78 मा उहाँले सम्हालेका प्रस्ताव र निर्णयहरूको संख्या अहिलेसम्मकै सबैभन्दा बढी थियो। सन् २०२४–२०२५ मा उहाँ Member State Mechanism (MSM) Steering Committee का सचिवका रूपमा पनि कार्यरत रहनुभयो।</p>
+                    
+                    <p>यसअघि उहाँले इन्डोनेसियामा WHO को Country Cooperation Strategy तथा संयुक्त राष्ट्रसंघको Development Cooperation Framework तयार गर्न सहयोग गर्नुभयो। भारतमा उहाँ पोलियो उन्मूलन अभियानमा संलग्न रहनुभयो। म्यानमारमा उहाँले सन् २००७ मा देशकै पहिलो राष्ट्रव्यापी दादुरा खोप अभियानको योजना र कार्यान्वयनमा सहयोग गर्नुभयो, जसबाट ७५ लाखभन्दा बढी बालबालिकालाई खोप लगाइयो।</p>
+                    
+                    <p>WHO मा काम गर्नुअघि उहाँ UNICEF तर्फबाट Solomon Islands मा Country Coordinator का रूपमा कार्यरत रहनुभयो। त्यहाँ उहाँले बालस्वास्थ्य तथा खोप कार्यक्रमहरूलाई सहयोग गर्नुभयो।</p>
+                    
+                    <p>सन् १९९० को दशकको मध्यतिर, नागरिक अभियन्ताका रूपमा उहाँले विकास सहयोग कसरी प्रयोग भइरहेको छ भन्ने विषयमा आवाज उठाउँदै उत्तरदायित्व अभियानको नेतृत्व गर्नुभयो। यस अभियानले अन्तर्राष्ट्रिय सञ्चारमाध्यमको ध्यान तान्यो र स्थानीय तहमा अन्तर्राष्ट्रिय संस्थाहरूले काम गर्ने तरिकामा सुधार ल्याउन मदत गर्‍यो।</p>
+                    
+                    <p>नेपालमा पनि उहाँले प्रत्यक्ष रूपमा समुदायका लागि काम गर्नुभएको छ। कोभिड–१९ सुरु हुनुअघि उहाँले आफ्नै जन्मगाउँ गेखु, नुवाकोटमा एक स्वास्थ्य क्लिनिक स्थापना गर्नुभयो। यसअघि उहाँले गोल्जुङ (उपल्लो रसुवा) मा आमा–शिशु स्वास्थ्य क्लिनिक सञ्चालन गर्नुभयो, रसुवाको कालिकास्थानमा हाल सञ्चालनमा रहेको सामुदायिक अस्पतालको मुख्य भवन निर्माण गर्नुभयो, र काभ्रेका ग्रामीण क्षेत्रमा सरकारी स्वास्थ्य केन्द्र सञ्चालनका लागि आवश्यक भवन निर्माणमा सहयोग गर्नुभयो।</p>
+                    
+                    <p>साथै उहाँले नुवाकोटको त्रिशूली जिल्ला अस्पताललगायत विभिन्न स्थानमा निःशुल्क शल्यक्रिया शिविरहरू आयोजना गर्न सहयोग गर्नुभयो, जसबाट हजारौँ बिरामीहरूले निःशुल्क उपचार पाए।</p>
+                    
+                    <p>उहाँको शिक्षा आफ्नै जन्मस्थान गेखु र चोकडेका सरकारी विद्यालयहरूबाट सुरु भयो। त्यसपछि उहाँले काठमाडौँका सरकारी विद्यालय तथा कलेजहरूमा अध्ययन गर्नुभयो। पछि उहाँले थाइल्यान्डको Mahidol University बाट स्नातकोत्तर उपाधि प्राप्त गर्नुभयो, जुन एशियाकै अग्रणी जनस्वास्थ्य विश्वविद्यालयमध्ये एक हो।</p>
+                    
+                    <p>नेपालमा हाल देखिएको Gen Z आन्दोलन, युवा सहिदहरूको बलिदान, र परिणाम दिन सक्ने नयाँ पुस्ताका नेताहरूको उत्साहबाट प्रेरित भई उहाँले आफ्नो अन्तर्राष्ट्रिय जागिर छोडेर नेपाल फर्किने निर्णय गर्नुभयो, ताकि देशको विकासका लागि आफ्नो बाँकी सक्रिय जीवन समर्पित गर्न सकून्।</p>
+                    
+                    <div class="tagline">जय नेपाल।</div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="vitae.html">Vitae</a></li>
+                    <li><a href="papers.html">Papers</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <p>Email: <a href="mailto:gyanendrag@yahoo.com">gyanendrag@yahoo.com</a></p>
+                <p>Phone: <a href="tel:+9779851050099">+977 9851050099</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Me</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Gyanendra Ghale. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
